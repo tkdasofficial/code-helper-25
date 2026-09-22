@@ -4,16 +4,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import {
   Download,
   ExternalLink,
-  Play,
-  Sparkles,
-  Film,
   ChevronDown,
   ChevronUp,
-  Subtitles,
   CheckCircle2,
   Clock,
   Loader2,
-  Music,
   Terminal,
 } from "lucide-react";
 import { toast } from "sonner";
