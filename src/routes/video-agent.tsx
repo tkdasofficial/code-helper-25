@@ -26,6 +26,7 @@ import {
   SwitchRow,
   TextRow,
 } from "@/components/hyper/StudioControls";
+import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 
 export const Route = createFileRoute("/video-agent")({
@@ -111,7 +112,6 @@ function VideoAgent() {
   const [mode, setMode] = useState<"short" | "long">("long");
   const [prompt, setPrompt] = useState("");
   const [negative, setNegative] = useState("");
-  const [showNegative, setShowNegative] = useState(false);
 
   const [resolution, setResolution] = useState<(typeof RESOLUTIONS)[number]>("1080p Full HD");
   const [fps, setFps] = useState<(typeof FRAME_RATES)[number]>("60 FPS");
@@ -455,15 +455,15 @@ function VideoAgent() {
           ) : null}
         </Panel>
 
-        <button
+        <Button
           type="button"
           id="generate-video-action-btn"
           disabled={busy}
           onClick={() => void handleGenerateVideo()}
-          className="w-full rounded-full bg-primary py-3 text-[14px] font-bold text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
+          className="h-11 w-full rounded-full text-[14px] font-bold"
         >
           {busy ? `Generating… ${progress}%` : "Generate"}
-        </button>
+        </Button>
 
         {busy || status || lines.length > 0 ? (
           <div className="space-y-3.5 rounded-2xl border border-border bg-surface/50 p-3.5">
@@ -521,10 +521,12 @@ function VideoAgent() {
             </div>
 
             <div>
-              <button
+              <Button
                 type="button"
+                variant="ghost"
+                size="sm"
                 onClick={() => setShowLogs(!showLogs)}
-                className="flex items-center gap-1.5 text-[11.5px] font-semibold text-muted-foreground transition-colors hover:text-foreground"
+                className="h-7 px-1.5 text-[11.5px] text-muted-foreground hover:text-foreground"
               >
                 <Terminal className="h-3.5 w-3.5" />
                 <span>{showLogs ? "Hide logs" : "View logs"}</span>
@@ -533,7 +535,7 @@ function VideoAgent() {
                 ) : (
                   <ChevronDown className="h-3.5 w-3.5" />
                 )}
-              </button>
+              </Button>
               {showLogs ? (
                 <div className="pt-2">
                   <Console lines={lines} />
