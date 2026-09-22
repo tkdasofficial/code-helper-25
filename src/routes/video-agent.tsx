@@ -65,6 +65,13 @@ const FRAME_RATES = ["30 FPS", "60 FPS"] as const;
 const VOICE_GENDERS = ["Male", "Female"] as const;
 const CAPTION_STYLES = ["Minimal", "Bold", "Dynamic"] as const;
 const CAPTION_SIZES = ["Small", "Medium", "Large"] as const;
+const MODES = ["Long-form", "Short-form"] as const;
+const STAGES = [
+  { stage: 1, label: "Scripting" },
+  { stage: 2, label: "Voiceover" },
+  { stage: 3, label: "Render" },
+  { stage: 4, label: "Complete" },
+] as const;
 
 type LogLine = { time: string; text: string; tone?: "ok" | "warn" | "err" };
 
