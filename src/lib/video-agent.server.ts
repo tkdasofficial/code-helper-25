@@ -84,7 +84,7 @@ async function invokeRenderDispatch(
       payload = res.data;
       invokeErr = res.error;
     } catch (e) {
-      invokeErr = e;
+      invokeErr = e as Error;
     }
 
     if (invokeErr || !payload || payload.ok !== true) {

@@ -37,7 +37,8 @@ export { DuckDuckGoSearch } from "./extensions/ddg-search.js";
 
 // Lightweight Edge & Remote Dispatch Bridge
 export * from "../lightweight-web-sdk.js";
-export { LightweightWebSdk } from "../lightweight-web-sdk.js";
+import { LightweightWebSdk } from "../lightweight-web-sdk.js";
+export { LightweightWebSdk };
 
 /**
  * Simple Data Fetching Functions
