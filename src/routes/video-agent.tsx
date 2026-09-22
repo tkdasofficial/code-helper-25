@@ -20,14 +20,12 @@ import { supabase } from "@/config";
 import { getVideoPlaybackUrl, startVideoRender } from "@/lib/video-agent.functions";
 import { cn } from "@/lib/utils";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Slider } from "@/components/ui/slider";
-import { Switch } from "@/components/ui/switch";
+  Panel,
+  Segment,
+  SliderRow,
+  SwitchRow,
+  TextRow,
+} from "@/components/hyper/StudioControls";
 import { Progress } from "@/components/ui/progress";
 
 export const Route = createFileRoute("/video-agent")({
